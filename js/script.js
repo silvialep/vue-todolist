@@ -1,11 +1,5 @@
 /*
-Rifare l'esercizio della to do list.
-Questa volta però ogni todo sarà un oggetto, formato da due proprietà:
-- text, una stringa che indica il testo del todo
-- done, un booleano (true/false) che indica se il todo è stato fatto oppure no
-MILESTONE 1
-Stampare all'interno di una lista HTML un item per ogni todo.
-Se la proprietà done è uguale a true, visualizzare il testo del todo sbarrato.
+
 MILESTONE 2
 Visualizzare a fianco ad ogni item ha una "x": cliccando su di essa, il todo viene rimosso dalla lista.
 MILESTONE 3
@@ -22,8 +16,10 @@ const { createApp } = Vue
     data() {
       return {
         toDoList: [],
+        doneList: [],
 
         newItem: {},
+
 
         newText: '',
 
@@ -41,9 +37,13 @@ const { createApp } = Vue
         },
 
         checkDone(indice) {
-            this.toDoList[indice].done = true;
-            console.log(this.toDoList[indice]);
-        }
+            // milestone 1 che barra il testo
+            // this.toDoList[indice].done = true;
+
+            // milestone 2 che cancella l'item dalla lista
+            this.toDoList.splice(indice, 1);
+        },
+
     },
 
 

@@ -15,6 +15,7 @@
 
     <div id="app">
         <input type="text" v-model="newText" @keyup.enter="addItem()">
+        <button @click="addItem()">Aggiungi</button>
         <ul>
             <li v-for="(item, index) in toDoList" :style="{textDecoration: item.done == true ? 'line-through' : ''}">{{item.text}}<span @click="checkDone(index)"><i class="fa-solid fa-check"></i></span></li>
         </ul>
