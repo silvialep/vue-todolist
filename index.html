@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do list</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -12,7 +16,7 @@
     <div id="app">
         <input type="text" v-model="newText" @keyup.enter="addItem()">
         <ul>
-            <li v-for="item in toDoList">{{item.text}}</li>
+            <li v-for="(item, index) in toDoList" :style="{textDecoration: item.done == true ? 'line-through' : ''}">{{item.text}}<span @click="checkDone(index)"><i class="fa-solid fa-check"></i></span></li>
         </ul>
     </div>
     

@@ -26,18 +26,26 @@ const { createApp } = Vue
         newItem: {},
 
         newText: '',
+
+        
         }
         
     },
 
 
     methods: {
+
         addItem() {
             this.toDoList.push({text: this.newText, done: false});
             this.newText = '';
-            console.log(this.toDoList);
+        },
+
+        checkDone(indice) {
+            this.toDoList[indice].done = true;
+            console.log(this.toDoList[indice]);
         }
-    }
+    },
+
 
 
 
