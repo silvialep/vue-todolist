@@ -21,8 +21,22 @@ const { createApp } = Vue
   createApp({
     data() {
       return {
-        message: 'Hello Vue!'
-      }
+        toDoList: [],
+
+        newItem: {},
+
+        newText: '',
+        }
+        
+    },
+
+
+    methods: {
+        addItem() {
+            this.toDoList.push({text: this.newText, done: false});
+            this.newText = '';
+            console.log(this.toDoList);
+        }
     }
 
 

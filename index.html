@@ -9,7 +9,12 @@
 <body>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-
+    <div id="app">
+        <input type="text" v-model="newText" @keyup.enter="addItem()">
+        <ul>
+            <li v-for="item in toDoList">{{item.text}}</li>
+        </ul>
+    </div>
     
     <script src="js/script.js"></script>
 </body>
